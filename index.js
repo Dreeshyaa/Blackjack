@@ -12,8 +12,13 @@ let x = Math.random()*12;
 
 return parseInt(x);
 
-}
-
+}function getRandomCardOne(){
+   
+   let x = Math.random()*12;
+   
+   return parseInt(x);
+   
+   }
 function startGame(){
    renderGame()
 }
