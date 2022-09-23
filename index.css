@@ -1,0 +1,37 @@
+h1{
+    color: goldenrod;
+    text-align: center; 
+    
+    /* justify-content: center; */
+}
+p{
+    color:aliceblue;
+    font-size: 25px;
+    font-weight: bold;
+    /* text-align: center;  */
+    
+
+}
+body {
+    background-image: url("image.jpg");
+    background-size: cover;
+    font-family:  BlinkMacSystemFont;
+    font-weight: bold;
+    text-align: center;
+}
+button{
+    background-color:goldenrod;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    width: 150px;
+    margin: 4px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #016f32;
+
+}
