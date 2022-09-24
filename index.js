@@ -1,25 +1,61 @@
 
-var firstcard=getRandomCard()
-var secondCard =getRandomCard()
-cards=[firstcard,secondCard]
+let sum=0
+let isAlive= false
 let hasBlackJack= false
-let isAlive= true
 let message=""
-let sum=firstcard+secondCard
-function getRandomCard(){
+let player={
+    name: "Per",
+    chips: 145
+
+}
+
+let playerEl = document.querySelector("#player-el")
+   playerEl.textContent = player.name+": $"+ player.chips
+function getRandomCardOne(){
    
-let x = Math.random()*12;
+let x = Math.random()*11+1;
 
 return parseInt(x);
 
-}function getRandomCardOne(){
+}
+function getRandomCard(){
    
-   let x = Math.random()*12;
+   let x = Math.floor(Math.random()*13)+1;
+   if (x==11 || x==12||x==13){
+      //console.log(x)
+      return 10
+   }
+   else if(x==1){
+
+    //  console.log(sum+11)
+      if(sum+11>21){
+         x=1
+         console.log(1)
+         return x
+         
+      }
+      else{
+         x=11
+         console.log(11)
+         return x
+      }
+     
+   }
+   else{
+      return x
+   }
    
-   return parseInt(x);
    
    }
 function startGame(){
+   
+var firstcard=getRandomCard()
+var secondCard =getRandomCard()
+cards=[firstcard,secondCard]
+sum =firstcard + secondCard
+isAlive= true
+
+
    renderGame()
 }
  function renderGame(){
@@ -34,7 +70,7 @@ function startGame(){
          }
          
          
-    sumEl.textContent=  "Sum:" + " " +sum 
+    sumEl.textContent=  "Sum:" + " " + sum 
 
    
      if(sum<21){
@@ -48,18 +84,32 @@ function startGame(){
         message="You're out of the game! "
         isAlive=false
       
+      
     } 
    messageEl.textContent=message
 
  }
  function newCard(){
-   var Card= getRandomCard()
-   cards.push(Card)
+   if(hasBlackJack==false && isAlive==true){
+   var card= getRandomCard()
+   sum += card
+   cards.push(card)
    // cards+=cards+Card
-   sum += Card
    renderGame()
+   }
+   else{
+      return
+   }
  }
- let flooredNumber = Math.floor(3.45632)
-
-console.log(flooredNumber)
- 
+//  let airbnb={
+//    available: true,
+//    location: "ktm",
+//    price: 12000,
+//    example: ["welcome to our hotel", "airbnb"],
+//    sayHello: function(){
+//       console.log("Heisann!")
+//    }
+//  }
+// airbnb.sayHello()
+//  console.log(airbnb.available)
+//  console.log(airbnb.example)
